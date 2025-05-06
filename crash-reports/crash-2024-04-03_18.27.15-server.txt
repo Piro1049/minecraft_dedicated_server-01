@@ -1,0 +1,91 @@
+---- Minecraft Crash Report ----
+// This doesn't make any sense!
+
+Time: 2024-04-03 18:27:15
+Description: Exception in server tick loop
+
+java.lang.IllegalStateException: Failed to initialize server
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:635) ~[server-1.20.1-20230612.114412-srg.jar%23139!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:citadel.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23139!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:citadel.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:1589) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 5.15.0-101-generic
+	Java Version: 19.0.2, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Private Build
+	Memory: 591288712 bytes (563 MiB) / 1342177280 bytes (1280 MiB) up to 1342177280 bytes (1280 MiB)
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
+	Identifier: Intel64 Family 6 Model 61 Stepping 4
+	Microarchitecture: Broadwell (Client)
+	Frequency (GHz): 2.70
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: Iris Graphics 6100
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 256.00
+	Graphics card #0 deviceId: 0x162b
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 8025.16
+	Virtual memory used (MB): 1886.04
+	Swap memory total (MB): 4096.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xmx1280M -Xms1280M
+	Server Running: true
+	Data Packs: vanilla, mod:farmersdelight, mod:skyvillages (incompatible), mod:geckolib, mod:playeranimator (incompatible), mod:irons_spellbooks, mod:lithostitched, mod:bendylib (incompatible), mod:advancedcompass (incompatible), mod:caelus (incompatible), mod:forge, mod:aquaculture, mod:easy_villagers, mod:ctov, mod:curios (incompatible), mod:wwoo_forge (incompatible), mod:storagedrawers (incompatible), mod:regrowth, mod:citadel (incompatible), mod:iceandfire, mod:journeymap (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.21.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.21.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.21.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.21.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.21.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		FarmersDelight-1.20.1-1.2.4.jar                   |Farmer's Delight              |farmersdelight                |1.20.1-1.2.4        |DONE      |Manifest: NOSIGNATURE
+		SkyVillages-1.0.3-1.19.2-1.20.x-forge-release.jar |Sky Villages                  |skyvillages                   |1.0.3               |DONE      |Manifest: NOSIGNATURE
+		regrowth-1.20-46.31.2.jar                         |Regrowth                      |regrowth                      |46.31.2             |DONE      |Manifest: NOSIGNATURE
+		geckolib-neoforge-1.20.1-4.4.4.jar                |GeckoLib 4                    |geckolib                      |4.4.4               |DONE      |Manifest: NOSIGNATURE
+		player-animation-lib-forge-1.0.2-rc1+1.20.jar     |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |DONE      |Manifest: NOSIGNATURE
+		irons_spellbooks-1.20.1-3.1.0.jar                 |Iron's Spells 'n Spellbooks   |irons_spellbooks              |1.20.1-3.1.0        |DONE      |Manifest: NOSIGNATURE
+		lithostitched-forge-1.20.1-1.1.5.jar              |Lithostitched                 |lithostitched                 |1.1.5               |DONE      |Manifest: NOSIGNATURE
+		bendy-lib-forge-4.0.0.jar                         |Bendy lib                     |bendylib                      |4.0.0               |DONE      |Manifest: NOSIGNATURE
+		advancedcompass.forge.1.20.1-1.2.15.jar           |Advanced Compass              |advancedcompass               |1.2.15              |DONE      |Manifest: NOSIGNATURE
+		caelus-forge-3.1.0+1.20.jar                       |Caelus API                    |caelus                        |3.1.0+1.20          |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.2.21-universal.jar                |Forge                         |forge                         |47.2.21             |DONE      |Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		Aquaculture-1.20.1-2.5.1.jar                      |Aquaculture 2                 |aquaculture                   |2.5.1               |DONE      |Manifest: NOSIGNATURE
+		easy_villagers-1.20.1-1.0.17.jar                  |Easy Villagers                |easy_villagers                |1.20.1-1.0.17       |DONE      |Manifest: NOSIGNATURE
+		[Forge]ctov-3.4.2.jar                             |ChoiceTheorem's Overhauled Vil|ctov                          |3.4.2               |DONE      |Manifest: NOSIGNATURE
+		curios-forge-5.7.2+1.20.1.jar                     |Curios API                    |curios                        |5.7.2+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		journeymap-1.20.1-5.9.20-forge.jar                |Journeymap                    |journeymap                    |5.9.20              |DONE      |Manifest: NOSIGNATURE
+		citadel-2.5.4-1.20.1.jar                          |Citadel                       |citadel                       |2.5.4               |DONE      |Manifest: NOSIGNATURE
+		iceandfire-2.1.13-1.20.1-beta-4.jar               |Ice and Fire                  |iceandfire                    |2.1.13-1.20.1-beta-4|DONE      |Manifest: NOSIGNATURE
+		WWOO-FABRIC+FORGE+QUILT-2.0.0.jar                 |William Wythers Overhauled Ove|wwoo_forge                    |2.0.0               |DONE      |Manifest: NOSIGNATURE
+		storagedrawers-1.20.1-12.0.3.jar                  |Storage Drawers               |storagedrawers                |12.0.3              |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 879d5606-602e-4ee8-8ab3-9340d8bb7485
+	FML: 47.2
+	Forge: net.minecraftforge:47.2.21
